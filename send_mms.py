@@ -47,7 +47,7 @@ s3_url = "https://s3-" + bucket_region + ".amazonaws.com/" + bucket_name + "/" +
 #Send MMS
 mmsdata = {"from": fromnum, "to": tonum, "body": msg_body, "media_urls":[s3_url], "is_mms": "true"}
 fr_auth = (FR_ACCESS_KEY, FR_SECRET_KEY)
-base = "https://api.flowroute.com/messages/v2.1"
+base = "https://api.flowroute.com/v2.1/messages"
 headers = {"Content-Type": "application/vnd.api+json"}
 r = requests.post(base, auth=fr_auth, json=mmsdata, headers=headers)
 print r.status_code
